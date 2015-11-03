@@ -6,7 +6,7 @@ The pipe between VK public communities and Telegram messenger. It checks VK comm
 
 ## Usage
 
-You have to create `properties.json` with the following params:
+You have to create `properties.json` file with the following params:
 
 ```json
 {
@@ -23,6 +23,12 @@ You have to create `properties.json` with the following params:
   ]
 }
 ```
+
+The `walls` parameter is the list of communities (or users) walls. It's the same parameter as `domain` in the  [wall.get](https://vk.com/dev/wall.get) request.
+
+The `telegram_bot_token` parameter is the token of your telegram bot which will send messages.
+
+The `user_ids` parameters is the ids of telegram users which will receive messages.
 
 Run:
 ```
