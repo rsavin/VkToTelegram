@@ -13,13 +13,13 @@ You have to create `properties.json` with the following params:
   "walls": [
     "<wall_id1>",
     "<wall_id2>",
-    ...
+    "<wall_id3>"
   ],
   "telegram_bot_token": "<your_telegram_bot_token>",
   "user_ids": [
     "<telegram_user_id1>",
     "<telegram_user_id2>",
-    ...
+    "<telegram_user_id3>"
   ]
 }
 ```
