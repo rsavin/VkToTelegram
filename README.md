@@ -1,7 +1,7 @@
 # VkToTelegram
 
 The pipe between VK public communities and Telegram messenger. It checks VK communities walls every minute and sends
- new posts to the list of Telegram users.
+ new posts to the Telegram users.
 
 
 ## Usage
