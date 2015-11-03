@@ -24,6 +24,11 @@ You have to create `properties.json` with the following params:
 }
 ```
 
+Run:
+```
+python vk_to_telegram.py properties.json
+```
+
 ## License
 
     Copyright 2015 Roman Savin
