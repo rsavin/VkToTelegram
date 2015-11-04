@@ -1,6 +1,6 @@
 # VkToTelegram
 
-The pipe between VK public communities and Telegram messenger. It checks VK communities walls every minute and sends
+The pipe between VK.com communities and Telegram messenger. It checks VK communities walls every minute and sends
  new posts to the Telegram users.
 
 
@@ -30,9 +30,9 @@ You have to create `properties.json` file with the following params:
 }
 ```
 
-The `telegram_bot_token` parameter is the token of your telegram bot which will send messages. It's *required* parameter.
+The `telegram_bot_token` parameter is the token of your telegram bot which will send messages. It's **required** parameter.
 
-The `user_ids` parameters is the ids of telegram users which will receive messages. It's *required* parameter.
+The `user_ids` parameters is the ids of telegram users which will receive messages. It's **required** parameter.
 
 The `public_walls` parameter is the list of public communities (or users) walls. It's the same parameter as `domain` in the  [wall.get](https://vk.com/dev/wall.get) request.
 
