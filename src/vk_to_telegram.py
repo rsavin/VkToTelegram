@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """The main module"""
 
 import json
@@ -5,7 +6,6 @@ import getopt
 import sys
 import time
 from os.path import realpath
-
 import constants
 import telegram_sender
 import vk_fetcher
@@ -41,7 +41,8 @@ def main(argv):
         fetch_time = time.time()
         posts = vk_fetcher.fetch(walls, last_fetch_time)
         last_fetch_time = fetch_time
-        telegram_sender.send(posts, bot_token, user_ids)
+        if posts:
+            telegram_sender.send(posts, bot_token, user_ids)
         time.sleep(constants.SLEEP_TIME)
 
 

@@ -2,9 +2,7 @@
 
 import collections
 import logging
-
 import requests
-
 import constants
 
 logging.basicConfig(filename='vk_to_telegram.log', level=logging.DEBUG)
@@ -31,7 +29,7 @@ def _get_wall_posts(wall, last_fetch_time):
 
     logger.debug(response.status_code)
     if response.status_code == requests.codes.ok:
-        new_posts = map(lambda x: (wall, x['text']),
+        new_posts = map(lambda x: (wall, x['text'], _format_post_url(wall, x)),
                         filter(lambda x:
                                isinstance(x, collections.Iterable) and 'date' in x and x['date'] > last_fetch_time,
                                response.json()['response']
@@ -42,3 +40,7 @@ def _get_wall_posts(wall, last_fetch_time):
 
     logger.debug(new_posts)
     return new_posts
+
+
+def _format_post_url(wall, post):
+    return constants.VK_POST_URL.format(wall, post['from_id'], post['id'])
