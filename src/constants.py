@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 
 VK_PUBLIC_WALL_URL = 'https://api.vk.com/method/wall.get?domain={0}&count={1}'
 
+VK_PRIVATE_WALL_URL = 'https://api.vk.com/method/wall.get?domain={0}&count={1}&access_token={2}'
+
 VK_POST_URL = 'https://vk.com/{0}?w=wall{1}_{2}'
 
 TELEGRAM_URL = 'https://api.telegram.org/bot{0}/sendMessage'

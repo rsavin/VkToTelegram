@@ -10,7 +10,12 @@ You have to create `properties.json` file with the following params:
 
 ```json
 {
-  "walls": [
+  "public_walls": [
+    "<wall_id1>",
+    "<wall_id2>",
+    "<wall_id3>"
+  ],
+  "private_walls": [
     "<wall_id1>",
     "<wall_id2>",
     "<wall_id3>"
@@ -20,15 +25,21 @@ You have to create `properties.json` file with the following params:
     "<telegram_user_id1>",
     "<telegram_user_id2>",
     "<telegram_user_id3>"
-  ]
+  ],
+  "vk_access_token": "<access_token_for_private_communities>"
 }
 ```
 
-The `walls` parameter is the list of communities (or users) walls. It's the same parameter as `domain` in the  [wall.get](https://vk.com/dev/wall.get) request.
+The `telegram_bot_token` parameter is the token of your telegram bot which will send messages. It's *required* parameter.
 
-The `telegram_bot_token` parameter is the token of your telegram bot which will send messages.
+The `user_ids` parameters is the ids of telegram users which will receive messages. It's *required* parameter.
 
-The `user_ids` parameters is the ids of telegram users which will receive messages.
+The `public_walls` parameter is the list of public communities (or users) walls. It's the same parameter as `domain` in the  [wall.get](https://vk.com/dev/wall.get) request.
+
+The `private_walls` parameter is the list of private communities (or users) walls. It's the same parameter as `domain` in the  [wall.get](https://vk.com/dev/wall.get) request.
+You must specify `vk_access_token` for accessing to these walls.
+
+The `vk_access_token` parameter is the access token for accessing to private walls. For more information see https://vk.com/dev/authentication
 
 Run:
 ```
