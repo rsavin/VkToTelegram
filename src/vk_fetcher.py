@@ -29,7 +29,7 @@ def _get_wall_posts(wall, last_fetch_time):
 
     logger.debug(response.status_code)
     if response.status_code == requests.codes.ok:
-        new_posts = map(lambda x: (wall, x['text'], _format_post_url(wall, x)),
+        new_posts = map(lambda x: (wall, x['text'], _get_photos(x), _format_post_url(wall, x)),
                         filter(lambda x:
                                isinstance(x, collections.Iterable) and 'date' in x and x['date'] > last_fetch_time,
                                response.json()['response']
@@ -43,4 +43,9 @@ def _get_wall_posts(wall, last_fetch_time):
 
 
 def _format_post_url(wall, post):
-    return constants.VK_POST_URL.format(wall, post['from_id'], post['id'])
+    return constants.VK_POST_URL.format(wall, post['to_id'], post['id'])
+
+
+def _get_photos(post):
+    if 'attachments' in post:
+        return map(lambda x: x['photo']['src_big'], filter(lambda x: x['type'] == 'photo', post['attachments']))
